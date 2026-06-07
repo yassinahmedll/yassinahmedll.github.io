@@ -1,383 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>YA Media — Media Buyer for brands that want to grow</title>
-<meta name="description" content="YA Media is an independent media buying operation running profitable paid-ads campaigns on Meta for e-commerce brands." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YA Media — Media Buyer for clothing brands that want to grow</title>
+    <meta name="description" content="YA Media is an independent media buying operation running profitable paid-ads campaigns on Meta for e-commerce brands.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0A0D14;
+            color: #F3F4F6;
+            font-family: 'Inter Tight', sans-serif;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-<div class="loader" id="loader" aria-live="polite" aria-label="Loading website">
-  <div class="loader-inner">
-    <div class="loader-mark">ya.</div>
-    <div class="loader-bar"><span id="loaderBar"></span></div>
-    <div class="loader-row">
-      <span>Loading assets</span>
-      <span id="loaderPercent">0%</span>
-    </div>
-  </div>
-</div>
-
-<div class="cursor" id="cursor"></div>
-
-<nav>
-  <div class="logo"><span class="dot"></span>YA<span class="sub">.media</span></div>
-  <ul>
-    <li><a href="#about" data-hover>About & Goals</a></li>
-    <li><a href="#workflow" data-hover>What We Do</a></li>
-    <li><a href="#services" data-hover>Pricing</a></li>
-    <li><a href="#results" data-hover>Results</a></li>
-    <li><a href="#faq" data-hover>FAQ</a></li>
-  </ul>
-  <div class="nav-actions">
-    <div class="availability-badge" data-hover>
-      <span></span>
-      Taking 5 new brands
-    </div>
-    <button class="nav-cta" type="button" id="openCalendly" data-hover>Book a call →</button>
-    <button class="menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" data-hover>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="snap-container" id="snapContainer">
-
-<!-- SECTION 1: INTRO HERO -->
-<div class="snap-section active" data-label="Intro">
-<header class="hero">
-  <div class="hero-meta">
-    <div>MEDIA BUYING OPERATION — INDEPENDENT</div>
-    <div>BILINGUAL MARKET EDGE (EN / FR)</div>
-  </div>
-  <h1 class="reveal in">
-    We run Meta ads<br>
-    that scale <span class="accent">clothing brands.</span><br>
-    No <span class="strike">jargon.</span> Just revenue.
-  </h1>
-  <div class="hero-foot">
-    <div class="description reveal delay-1">
-      Hi — We are YA Media. We run clean, highly profitable paid ad campaigns on Facebook and Instagram for fashion and clothing stores. No confusing dashboards, no agency fluff. Just strict, data-driven execution to make your store print sales.
-    </div>
-    <div class="reveal delay-1">
-      <div class="stat"><span class="count" data-count="100" data-decimals="0">0</span><span class="unit">k+</span></div>
-      <div class="stat-label">Ad Spend Optimized</div>
-    </div>
-    <div class="reveal delay-2">
-      <div class="stat"><span class="count" data-count="5" data-decimals="1">0</span><span class="unit">x+</span></div>
-      <div class="stat-label">Target ROAS Floor</div>
-    </div>
-    <div class="reveal delay-3">
-      <div class="stat"><span class="count" data-count="100" data-decimals="0">0</span><span class="unit">%</span></div>
-      <div class="stat-label">Direct Operator Focus</div>
-    </div>
-  </div>
-</header>
-
-<div class="marquee">
-  <div class="marquee-track">
-    <span>Meta Ads</span><span>Creative Strategy</span><span>Clothing & Apparel</span><span>E-Commerce Scaling</span><span>Bilingual Copy</span><span>ROAS Optimization</span>
-    <span>Meta Ads</span><span>Creative Strategy</span><span>Clothing & Apparel</span><span>E-Commerce Scaling</span><span>Bilingual Copy</span><span>ROAS Optimization</span>
-  </div>
-</div>
-</div>
-
-<!-- SECTION 2: ABOUT & OUR GOALS -->
-<div class="snap-section" data-label="About">
-<section id="about">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">01 — Vision & Mission</div></div>
-    <h2 class="reveal-blur">Our focus.<br><em>Your bottom line.</em></h2>
-  </div>
-  <div class="about-grid">
-    <p class="reveal-blur">
-      Most traditional agencies care about vanity metrics—likes, clicks, and impressions. Our single, unfiltered goal is simple: <strong>to predictably scale your clothing brand's net margins using mathematical testing structures.</strong><br><br>
-      We study exactly how modern apparel shoppers behave online. By keeping our systems exceptionally clear and eliminating corporate bloat, we ensure every single dollar of your ad budget is directed straight toward high-converting traffic.<br><br>
-      We operate across English and French markets, bringing a native understanding of consumer psychology in North America and Europe to write ad copy that turns cold browsers into buyers instantly.
-    </p>
-    <div class="about-card reveal-right">
-      <h4>Core Intentions</h4>
-      <ul>
-        <li>Primary Channel <span>Meta (FB/IG) Ads</span></li>
-        <li>Specialty Niche <span>Clothing & Apparel</span></li>
-        <li>Language Reach <span>English / French Markets</span></li>
-        <li>Core KPI <span>Clean Purchase ROAS</span></li>
-        <li>Strategy <span>Broad Audience Testing</span></li>
-        <li>Infrastructure <span>Pixel & CAPI Validation</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- SECTION 3: WHAT WE DO (DETAILED WORKFLOW) -->
-<div class="snap-section" data-label="Workflow">
-<section id="workflow">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">02 — Executive System</div></div>
-    <h2 class="reveal-blur">What we do.<br><em>Exactly how it works.</em></h2>
-  </div>
-  <div class="about-grid">
-    <p class="reveal-blur">
-      We build clean, repeatable ad engines. We start by completely clearing out chaotic account architecture to prevent your budget from bidding against itself. Then, we implement a systematic scaling process:<br><br>
-      <strong>1. Account Streamlining:</strong> We break down complex ad sets into highly optimized, broad-targeting frameworks that allow Meta’s machine learning to find your exact buyers smoothly.<br><br>
-      <strong>2. Ad Creative Strategy:</strong> We look closely at your inventory to pitch clear angles, hooks, and straightforward copy tailored specifically to retail and fashion consumers.<br><br>
-      <strong>3. Absolute Protection:</strong> To respect consumer privacy and maintain our active clients' strategic advantages, we never share live dashboards or private account panels out in the open. Instead, we jump on a real call with you to walk through our playbooks transparently.
-    </p>
-    <div class="about-card reveal-right">
-      <h4>The Active Protocol</h4>
-      <ul>
-        <li>Step 01 <span>Pixel & Tracking Audit</span></li>
-        <li>Step 02 <span>Broad Audience Launch</span></li>
-        <li>Step 03 <span>Creative Hook Variations</span></li>
-        <li>Step 04 <span>Reminders for Cart Abandoners</span></li>
-        <li>Step 05 <span>Daily Budget Scaling</span></li>
-        <li>Step 06 <span>Weekly Low-Performer Cutting</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- SECTION 4: PRICING ENGAGEMENTS -->
-<div class="snap-section" data-label="Pricing">
-<section class="services" id="services">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">03 — Engagements</div></div>
-    <h2 class="reveal-blur">Pick the scope<br>your brand <em>demands.</em></h2>
-  </div>
-  <div class="pricing-grid">
-    <div class="price-card reveal">
-      <div class="tier-name">Tier 01</div>
-      <div class="tier-title">Audit & <em>Action Playbook</em></div>
-      <div class="price"><span class="currency">EGP</span>5,000</div>
-      <div class="price-sub">One-time commitment</div>
-      <ul class="features">
-        <li>Complete structural diagnostic of your Meta ad account</li>
-        <li>Pixel, Conversion API, and funnel bottleneck review</li>
-        <li>Tailored 20+ page roadmap detailing creative opportunities</li>
-        <li>60-minute interactive strategy walk-through session</li>
-        <li>Delivered securely within 7 business days</li>
-        <li>Perfect if you want to execute our playbook in-house</li>
-      </ul>
-      <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20an%20Audit%20and%20Action%20Playbook%20for%20my%20brand." target="_blank" rel="noopener" class="cta" data-hover>Request an Audit</a>
-    </div>
-    <div class="price-card featured reveal delay-1">
-      <div class="tier-name">Tier 02</div>
-      <div class="tier-title">Launch & <em>Scale System</em></div>
-      <div class="price"><span class="currency">EGP</span>12,500</div>
-      <div class="price-sub">Per month · 3-month partnership</div>
-      <ul class="features">
-        <li>Includes every asset inside the Tier 01 setup</li>
-        <li>End-to-end Meta ad campaign management & scaling</li>
-        <li>Weekly custom creative briefs & performance roadmaps</li>
-        <li>Bi-weekly progress alignment calls</li>
-        <li>Direct, asynchronous Slack or WhatsApp channel access</li>
-        <li>Plain-English performance reports focused strictly on revenue</li>
-        <li>Covers up to 200k EGP/mo ad spend execution</li>
-      </ul>
-      <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20the%20Launch%20and%20Scale%20System%20for%20my%20store." target="_blank" rel="noopener" class="cta" data-hover>Deploy Scale System</a>
-    </div>
-    <div class="price-card reveal delay-2">
-      <div class="tier-name">Tier 03</div>
-      <div class="tier-title">Full <em>Growth Partner</em></div>
-      <div class="price"><span class="currency">EGP</span>20,000</div>
-      <div class="price-sub">Per month · 6-month partnership</div>
-      <ul class="features">
-        <li>Full platform scaling across English & French markets</li>
-        <li>Deep-tier team alignment with immediate contact</li>
-        <li>Complete creative direction, copy writing, and UGC strategy</li>
-        <li>In-depth landing page and check-out rate optimizations</li>
-        <li>Unlimited ad spend capacity with no structural ceiling</li>
-        <li>Custom performance-based incentive incentives available</li>
-      </ul>
-      <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20a%20Full%20Growth%20Partnership." target="_blank" rel="noopener" class="cta" data-hover>Apply for Partnership</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- SECTION 5: SELECTED RESULTS -->
-<div class="snap-section" data-label="Results">
-<section id="results">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">04 — Account Performance</div></div>
-    <h2 class="reveal-blur">Verified math.<br><em>Zero assumptions.</em></h2>
-  </div>
-  <div class="results-grid">
-    <div class="proof-card span-7 reveal-scale">
-      <div class="proof-image"><img src="results/IMG_3602.jpg" alt="E-commerce store performance data"></div>
-      <div class="proof-body">
-        <div class="brand"><span>E-Commerce Apparel Store</span><span class="platform">META ADS</span></div>
-        <div class="big">EGP 50k<span class="plus"> Sales</span></div>
-        <h3>From a completely fresh store baseline to scaled revenue.</h3>
-        <p class="desc">Deconstructed messy campaign ad sets to clear the way for broad audience targeting. Scaled order volume steadily up to 88 conversions while growing total store revenue by 84% over the prior window.</p>
-        <div class="metrics">
-          <div class="metric"><div class="val">88</div><div class="lbl">Total Orders</div></div>
-          <div class="metric"><div class="val">+84%</div><div class="lbl">Revenue Jump</div></div>
-          <div class="metric"><div class="val">4.87%</div><div class="lbl">Conversion Rate</div></div>
+    <!-- Navbar -->
+    <nav class="border-b border-gray-900 bg-[#0A0D14]/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-lg font-bold tracking-wider text-white uppercase mono">
+                ● YA<span class="text-indigo-500">.media</span>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-xs font-medium uppercase tracking-wider text-gray-400">
+                <li><a href="#about" class="hover:text-white transition">About & Goals</a></li>
+                <li><a href="#workflow" class="hover:text-white transition">What We Do</a></li>
+                <li><a href="#services" class="hover:text-white transition">Pricing</a></li>
+                <li><a href="#results" class="hover:text-white transition">Results</a></li>
+                <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:flex items-center gap-2 bg-emerald-950/50 border border-emerald-800/40 rounded-full px-3 py-1 text-[11px] font-medium tracking-wide text-emerald-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Taking 5 new brands
+                </div>
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition shadow-lg shadow-indigo-600/10">
+                    Book a call →
+                </a>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <!-- Section 1: Intro Hero -->
+    <section class="max-w-6xl mx-auto px-6 pt-24 pb-20">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-12 border-b border-gray-900 pb-6 text-xs uppercase tracking-widest text-gray-500 mono">
+            <div>MEDIA BUYING OPERATION — INDEPENDENT</div>
+            <div>BILINGUAL MARKET EDGE (EN / FR)</div>
+        </div>
+        
+        <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-white mb-10 leading-[1.1]">
+            We run Meta ads <br>
+            that scale <span class="text-indigo-400 italic">clothing brands.</span><br>
+            <span class="text-gray-600 line-through">No jargon.</span> Just revenue.
+        </h1>
+
+        <div class="grid md:grid-cols-3 gap-12 items-end pt-8">
+            <div class="md:col-span-1 text-sm text-gray-400 leading-relaxed">
+                Hi — We are YA Media. We run clean, highly profitable paid ad campaigns on Facebook and Instagram for fashion and clothing stores. No confusing dashboards, no agency fluff. Just strict, data-driven execution to make your store print sales.
+            </div>
+            <div class="border-l border-gray-900 pl-6">
+                <div class="text-3xl font-bold text-white mono">100k+</div>
+                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Ad Spend Optimized</div>
+            </div>
+            <div class="border-l border-gray-900 pl-6">
+                <div class="text-3xl font-bold text-white mono">5.0x+</div>
+                <div class="text-xs uppercase tracking-wider text-gray-500 mt-1">Target ROAS Floor</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="bg-[#0E121A] border-y border-gray-900 py-4 overflow-hidden select-none">
+        <div class="flex whitespace-nowrap gap-12 text-xs uppercase tracking-widest text-gray-500 mono">
+            <div>Meta Ads • Creative Strategy • Clothing & Apparel • E-Commerce Scaling • Bilingual Copy • ROAS Optimization</div>
+            <div>Meta Ads • Creative Strategy • Clothing & Apparel • E-Commerce Scaling • Bilingual Copy • ROAS Optimization</div>
+        </div>
     </div>
-    <div class="proof-card span-5 reveal delay-1">
-      <div class="proof-image"><img src="results/IMG_3469.jpg" alt="Consistent scaling proof data"></div>
-      <div class="proof-body">
-        <div class="brand"><span>Prior Performance Window</span><span class="platform">META ADS</span></div>
-        <div class="big">+85<span class="plus">%</span></div>
-        <h3>Compounding steady growth without sudden spikes.</h3>
-        <p class="desc">EGP 32,910 in generated product revenue across 61 individual checkouts. Maintained a clear 85% growth clip by keeping ad structures clean, highly predictable, and repeatable month after month.</p>
-      </div>
-    </div>
-    <div class="proof-card span-6 reveal">
-      <div class="proof-image"><img src="results/IMG_3468.jpg" alt="Direct conversion optimization data"></div>
-      <div class="proof-body">
-        <div class="brand"><span>Lead-Gen Conversion System</span><span class="platform">META ADS</span></div>
-        <div class="big">EGP 13.83<span class="plus"> CPL</span></div>
-        <h3>High-intent shopper conversations at a stable low cost.</h3>
-        <p class="desc">Generated 58 immediate purchase conversations and 9 direct product buy-outs on a compact EGP 802 test spend. Kept target cost per acquisition locked strictly under EGP 14 throughout the scaling window.</p>
-      </div>
-    </div>
-    <div class="proof-card span-6 reveal delay-1">
-      <div class="proof-image"><img src="results/IMG_3438.PNG" alt="Meta ads metrics data"></div>
-      <div class="proof-body">
-        <div class="brand"><span>Direct-Response Execution</span><span class="platform">META ADS</span></div>
-        <div class="big">56<span class="plus"> Convos</span></div>
-        <h3>Predictable metrics across consecutive scaling test runs.</h3>
-        <p class="desc">EGP 801 allocated into broad ad copy variations resulting directly in 56 active shopping actions and 7 instant purchases. Cost per contact remained completely flat at EGP 14.31.</p>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
 
-<!-- SECTION 6: HOW WE WORK (THE PROCESS) -->
-<div class="snap-section" data-label="Process">
-<section id="process">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">05 — Step-By-Step Scaling</div></div>
-    <h2 class="reveal-blur">Four weeks.<br><em>Then we run it up.</em></h2>
-  </div>
-  <div class="process-grid">
-    <div class="process-step"><div class="num">01</div><div><h3>Audit & Clean</h3><p>We trace current pixel breakdowns, kill overlapping target audiences, and map real performance baselines.</p></div></div>
-    <div class="process-step"><div class="num">02</div><div><h3>Angle Selection</h3><p>We craft simple, clear copy options based directly on retail shopper data in English or French.</p></div></div>
-    <div class="process-step"><div class="num">03</div><div><h3>System Launch</h3><p>Campaign structures are set up broad. Tracking triggers are fully validated. Daily performance checks start immediately.</p></div></div>
-    <div class="process-step"><div class="num">04</div><div><h3>Budget Scaling</h3><p>Winning copy angles get budget increases. Low-performing variables get cut every week. Budget goes up only when numbers prove profit.</p></div></div>
-  </div>
-</section>
-</div>
+    <!-- Section 2: About & Our Goals -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-4">01 — Vision & Mission</div>
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="md:col-span-2">
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Our focus. <br><em class="text-gray-400 font-normal">Your bottom line.</em></h2>
+                <div class="text-base text-gray-400 space-y-6 leading-relaxed">
+                    <p>Most traditional agencies care about vanity metrics—likes, clicks, and impressions. Our single, unfiltered goal is simple: <strong class="text-white font-semibold">to predictably scale your clothing brand's net margins using mathematical testing structures.</strong></p>
+                    <p>We study exactly how modern apparel shoppers behave online. By keeping our systems exceptionally clear and eliminating corporate bloat, we ensure every single dollar of your ad budget is directed straight toward high-converting traffic.</p>
+                    <p>We operate across English and French markets, bringing a native understanding of consumer psychology in North America and Europe to write ad copy that turns cold browsers into buyers instantly.</p>
+                </div>
+            </div>
+            <div class="bg-[#0E121A] border border-gray-900 rounded-xl p-6 h-fit">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white mono mb-4">Core Intentions</h4>
+                <ul class="space-y-3 text-xs tracking-wide">
+                    <li class="flex justify-between py-2 border-b border-gray-800"><span class="text-gray-500">Channel:</span> <span class="text-white font-medium">Meta (FB/IG) Ads</span></li>
+                    <li class="flex justify-between py-2 border-b border-gray-800"><span class="text-gray-500">Niche:</span> <span class="text-white font-medium">Clothing & Apparel</span></li>
+                    <li class="flex justify-between py-2 border-b border-gray-800"><span class="text-gray-500">Reach:</span> <span class="text-white font-medium">EN / FR Markets</span></li>
+                    <li class="flex justify-between py-2 border-b border-gray-800"><span class="text-gray-500">Core KPI:</span> <span class="text-indigo-400 font-medium font-bold">Purchase ROAS</span></li>
+                    <li class="flex justify-between py-2 border-b border-gray-800"><span class="text-gray-500">Strategy:</span> <span class="text-white font-medium">Broad Testing</span></li>
+                    <li class="flex justify-between"><span class="text-gray-500">Tracking:</span> <span class="text-white font-medium">Pixel & CAPI</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- SECTION 7: DETAILED FAQ -->
-<div class="snap-section" data-label="FAQ">
-<section id="faq">
-  <div class="section-head">
-    <div><div class="section-label reveal-left">06 — Answers & Insights</div></div>
-    <h2 class="reveal-blur">Frequently<br><em>asked.</em></h2>
-  </div>
-  <div class="faq-item" data-hover>
-    <div class="q"><h3>Why focus solely on clothing and apparel stores?</h3><div class="toggle">+</div></div>
-    <div class="a">Clothing brands live or die by consumer hooks, visual presentation, and rapid trend cycles. By dedicating our focus entirely to this industry, we know exactly what copy patterns, hook styles, and tracking structures win purchases right now.</div>
-  </div>
-  <div class="faq-item" data-hover>
-    <div class="q"><h3>How does your bilingual capability affect my returns?</h3><div class="toggle">+</div></div>
-    <div class="a">If you sell products internationally or target regions across North America and Europe, generic translations fall completely flat. We design native, natural ad positioning directly in both English and French to make sure your audience builds immediate trust with your store.</div>
-  </div>
-  <div class="faq-item" data-hover>
-    <div class="q"><h3>What specific ad budgets do you require?</h3><div class="toggle">+</div></div>
-    <div class="a">You keep 100% control over your ad budget. We balance and adjust our optimization plans based exactly on whatever current spend trajectory makes absolute sense for your store's cash flow.</div>
-  </div>
-  <div class="faq-item" data-hover>
-    <div class="q"><h3>Why don't you share live dashboard access?</h3><div class="toggle">+</div></div>
-    <div class="a">We protect our clients' data and competitive advantages fiercely. Publicly publishing actual product insights opens the door for competitors to steal winning assets. We keep operations clean and confidential, walk you through strategies on live screen-shares, and send plain-English summaries directly to you.</div>
-  </div>
-  <div class="faq-item" data-hover>
-    <div class="q"><h3>How quickly can our campaigns go live?</h3><div class="toggle">+</div></div>
-    <div class="a">Your structural audit drops within 48 hours of asset hand-off. Completely overhauled live ad campaigns are fully pushed to production within 7 to 10 days following plan approval.</div>
-  </div>
-</section>
-</div>
+    <!-- Section 3: What We Do (Workflow) -->
+    <section id="workflow" class="max-w-6xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-4">02 — Executive System</div>
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="md:col-span-2">
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">What we do. <br><em class="text-gray-400 font-normal">Exactly how it works.</em></h2>
+                <div class="text-base text-gray-400 space-y-6 leading-relaxed">
+                    <p>We build clean, repeatable ad engines. We start by completely clearing out chaotic account architecture to prevent your budget from bidding against itself. Then, we implement a systematic scaling process:</p>
+                    <p><strong class="text-white">1. Account Streamlining:</strong> We break down complex ad sets into highly optimized, broad-targeting frameworks that allow Meta’s machine learning to find your exact buyers smoothly.</p>
+                    <p><strong class="text-white">2. Ad Creative Strategy:</strong> We look closely at your inventory to pitch clear angles, hooks, and straightforward copy tailored specifically to retail and fashion consumers.</p>
+                    <p><strong class="text-white">3. Absolute Protection:</strong> To respect consumer privacy and maintain our active clients' strategic advantages, we never share live dashboards or private account panels out in the open. Instead, we jump on a real call with you to walk through our playbooks transparently.</p>
+                </div>
+            </div>
+            <div class="bg-[#0E121A] border border-gray-900 rounded-xl p-6 h-fit">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white mono mb-4">The Active Protocol</h4>
+                <ul class="space-y-3 text-xs tracking-wide text-white">
+                    <li class="flex items-center gap-3"><span class="text-gray-600 mono">01</span> Pixel & Tracking Audit</li>
+                    <li class="flex items-center gap-3"><span class="text-gray-600 mono">02</span> Broad Audience Launch</li>
+                    <li class="flex items-center gap-3"><span class="text-gray-600 mono">03</span> Creative Hook Variations</li>
+                    <li class="flex items-center gap-3"><span class="text-indigo-400 mono">04</span> Cart Abandoner Reminders</li>
+                    <li class="flex items-center gap-3"><span class="text-gray-600 mono">05</span> Daily Budget Scaling</li>
+                    <li class="flex items-center gap-3"><span class="text-gray-600 mono">06</span> Low-Performer Cutting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- SECTION 8: CONTACT FOOTER -->
-<div class="snap-section" data-label="Contact">
-<section class="contact" id="contact">
-  <h2 class="reveal-blur">Let's make your<br>ad accounts <em>print.</em></h2>
-  <div class="contact-row">
-    <div class="contact-col">
-      <h4>Email Address</h4>
-      <div class="big"><a href="mailto:yassinahmedll@icloud.com" data-hover>yassinahmedll@icloud.com</a></div>
-      <p style="margin-top:18px">Direct channel response within 24 hours.</p>
-    </div>
-    <div class="contact-col">
-      <h4>Direct Channel</h4>
-      <div class="big"><a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I%20saw%20your%20website%20and%20want%20to%20grow%20my%20brand." target="_blank" rel="noopener" data-hover>WhatsApp →</a></div>
-      <p style="margin-top:18px">+20 102 674 5745</p>
-      <p>Egypt</p>
-    </div>
-  </div>
-  <div class="contact-foot">
-    <div>
-      <div>© YA Media 2026</div>
-      <div style="margin-top:8px;opacity:.6">Independent Scaling Operation. Zero Bureaucracy.</div>
-    </div>
-    <div class="big-mark"><em>ya.</em></div>
-    <div style="text-align:right">
-      <div><a href="https://instagram.com/hassanyousseff.1" target="_blank" rel="noopener" data-hover>Instagram</a></div>
-      <div><a href="#" data-hover>LinkedIn</a></div>
-      <div><a href="#" data-hover>X / Twitter</a></div>
-    </div>
-  </div>
-</section>
-</div>
+    <!-- Section 4: Pricing Engagements -->
+    <section id="services" class="max-w-6xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-center mb-16">
+            <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-3">03 — Engagements</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Pick the scope your brand demands.</h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Tier 1 -->
+            <div class="bg-[#0E121A] border border-gray-900 rounded-2xl p-8 flex flex-col justify-between">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-gray-500 mono mb-2">Tier 01</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Audit & <span class="italic text-gray-400 font-normal">Action Playbook</span></h3>
+                    <div class="text-3xl font-bold text-white mono mb-1"><span class="text-sm font-normal text-gray-500 mr-1">EGP</span>5,000</div>
+                    <div class="text-xs text-gray-500 mb-6">One-time commitment</div>
+                    <ul class="space-y-3 text-xs text-gray-400 border-t border-gray-850 pt-6">
+                        <li>• Structural diagnostic of your Meta ad account</li>
+                        <li>• Pixel, Conversion API, and funnel review</li>
+                        <li>• Tailored 20+ page roadmap with creative ideas</li>
+                        <li>• 60-minute interactive strategy walk-through</li>
+                        <li>• Delivered securely within 7 business days</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20an%20Audit%20and%20Action%20Playbook%20for%20my%20brand." target="_blank" class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold text-xs uppercase tracking-wider py-4 rounded-xl mt-8 transition">Request an Audit</a>
+            </div>
 
-</div>
+            <!-- Tier 2 (Featured) -->
+            <div class="bg-[#0E121A] border-2 border-indigo-500 rounded-2xl p-8 flex flex-col justify-between relative shadow-2xl shadow-indigo-500/5">
+                <div class="absolute -top-3 right-6 bg-indigo-500 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full mono">Most Requested</div>
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-indigo-400 mono mb-2">Tier 02</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Launch & <span class="italic text-gray-400 font-normal">Scale System</span></h3>
+                    <div class="text-3xl font-bold text-white mono mb-1"><span class="text-sm font-normal text-gray-500 mr-1">EGP</span>12,500</div>
+                    <div class="text-xs text-gray-500 mb-6">Per month · 3-month partnership</div>
+                    <ul class="space-y-3 text-xs text-gray-300 border-t border-gray-800 pt-6">
+                        <li>• Includes every single asset from Tier 01</li>
+                        <li>• End-to-end Meta campaign management</li>
+                        <li>• Weekly custom creative briefs & roadmaps</li>
+                        <li>• Bi-weekly performance alignment calls</li>
+                        <li>• Direct Slack or WhatsApp operator access</li>
+                        <li>• Up to 200k EGP/mo ad spend execution</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20the%20Launch%20and%20Scale%20System%20for%20my%20store." target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs uppercase tracking-wider py-4 rounded-xl mt-8 transition shadow-lg shadow-indigo-600/20">Deploy Scale System</a>
+            </div>
 
-<div class="wipe" id="wipe">
-  <div class="wipe-circle"></div>
-  <div class="wipe-content" id="wipeContent"></div>
-</div>
+            <!-- Tier 3 -->
+            <div class="bg-[#0E121A] border border-gray-900 rounded-2xl p-8 flex flex-col justify-between">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-gray-500 mono mb-2">Tier 03</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Full <span class="italic text-gray-400 font-normal">Growth Partner</span></h3>
+                    <div class="text-3xl font-bold text-white mono mb-1"><span class="text-sm font-normal text-gray-500 mr-1">EGP</span>20,000</div>
+                    <div class="text-xs text-gray-500 mb-6">Per month · 6-month partnership</div>
+                    <ul class="space-y-3 text-xs text-gray-400 border-t border-gray-850 pt-6">
+                        <li>• Full platform scaling (English & French markets)</li>
+                        <li>• Deep-tier team alignment with fast response</li>
+                        <li>• Complete creative direction & UGC copywriting</li>
+                        <li>• Comprehensive landing page rate optimization</li>
+                        <li>• Unlimited ad spend ceiling capacity</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I'm%20interested%20in%20a%20Full%20Growth%20Partnership." target="_blank" class="block w-full text-center bg-gray-900 hover:bg-gray-800 text-white font-semibold text-xs uppercase tracking-wider py-4 rounded-xl mt-8 transition">Apply for Partnership</a>
+            </div>
+        </div>
+    </section>
 
-<nav class="snap-progress" id="snapProgress"></nav>
+    <!-- Section 5: Selected Results -->
+    <section id="results" class="max-w-6xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-4">04 — Account Performance</div>
+        <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-12">Verified math. <span class="text-gray-500 italic font-normal">Zero assumptions.</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Proof 1 -->
+            <div class="bg-[#0E121A] border border-gray-900 rounded-2xl p-6">
+                <div class="flex justify-between text-xs font-semibold uppercase tracking-wider border-b border-gray-850 pb-4 mb-6 mono">
+                    <span class="text-gray-400">E-Commerce Apparel Store</span>
+                    <span class="text-indigo-400">Meta Ads</span>
+                </div>
+                <div class="text-4xl font-bold text-white mono mb-2">EGP 50k <span class="text-sm text-gray-500 font-normal uppercase tracking-wider">Sales</span></div>
+                <h3 class="text-lg font-bold text-white mb-2">Fresh store baseline to scaled revenue.</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">Deconstructed messy campaign ad sets to clear the way for broad audience targeting. Scaled order volume steadily up to 88 conversions while growing total store revenue by 84% over the prior window.</p>
+                <div class="grid grid-cols-3 gap-4 border-t border-gray-850 pt-4 text-center mono">
+                    <div><div class="text-white font-bold">88</div><div class="text-[10px] uppercase text-gray-500">Orders</div></div>
+                    <div><div class="text-white font-bold">+84%</div><div class="text-[10px] uppercase text-gray-500">Revenue Jump</div></div>
+                    <div><div class="text-white font-bold">4.87%</div><div class="text-[10px] uppercase text-gray-500">Conv. Rate</div></div>
+                </div>
+            </div>
 
-<div class="calendly-modal" id="calendlyModal" aria-hidden="true">
-  <div class="calendly-backdrop" data-close-calendly></div>
-  <div class="calendly-panel" role="dialog" aria-modal="true" aria-labelledby="calendlyTitle">
-    <div class="calendly-head">
-      <div>
-        <div class="calendly-kicker">Discovery Call</div>
-        <h2 id="calendlyTitle">Book an Alignment Session</h2>
-      </div>
-      <button class="calendly-close" type="button" data-close-calendly aria-label="Close Calendly">×</button>
-    </div>
-    <iframe
-      id="calendlyFrame"
-      title="Book a call with YA Media"
-      data-src="https://calendly.com/hammamhassan394/30min?back=1&month=2026-05"
-    ></iframe>
-  </div>
-</div>
+            <!-- Proof 2 -->
+            <div class="bg-[#0E121A] border border-gray-900 rounded-2xl p-6">
+                <div class="flex justify-between text-xs font-semibold uppercase tracking-wider border-b border-gray-850 pb-4 mb-6 mono">
+                    <span class="text-gray-400">Prior Performance Window</span>
+                    <span class="text-indigo-400">Meta Ads</span>
+                </div>
+                <div class="text-4xl font-bold text-white mono mb-2">+85% <span class="text-sm text-gray-500 font-normal uppercase tracking-wider">Growth</span></div>
+                <h3 class="text-lg font-bold text-white mb-2">Compounding steady growth without sudden spikes.</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">EGP 32,910 in generated product revenue across 61 individual checkouts. Maintained a clear 85% growth clip by keeping ad structures clean, highly predictable, and repeatable month after month.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="scroll-hint" id="scrollHint">
-  <div>Scroll</div>
-  <div class="line"></div>
-</div>
+    <!-- Section 6: How We Work (Process) -->
+    <section id="process" class="max-w-6xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-4">05 — Step-By-Step Scaling</div>
+        <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-16">Four weeks. <span class="text-gray-500 italic font-normal">Then we run it up.</span></h2>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-xs font-bold text-indigo-500 mono mb-2">01 / AUDIT & CLEAN</div>
+                <p class="text-xs text-gray-400 leading-relaxed">We trace current pixel breakdowns, kill overlapping target audiences, and map real performance baselines.</p>
+            </div>
+            <div>
+                <div class="text-xs font-bold text-indigo-500 mono mb-2">02 / ANGLE SELECTION</div>
+                <p class="text-xs text-gray-400 leading-relaxed">We craft simple, clear copy options based directly on retail shopper data in English or French.</p>
+            </div>
+            <div>
+                <div class="text-xs font-bold text-indigo-500 mono mb-2">03 / SYSTEM LAUNCH</div>
+                <p class="text-xs text-gray-400 leading-relaxed">Campaign structures are set up broad. Tracking triggers are fully validated. Daily performance checks start immediately.</p>
+            </div>
+            <div>
+                <div class="text-xs font-bold text-indigo-500 mono mb-2">04 / BUDGET SCALING</div>
+                <p class="text-xs text-gray-400 leading-relaxed">Winning copy angles get budget increases. Low-performing variables get cut every week. Budget goes up only when numbers prove profit.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="float-stack">
-  <a class="float-btn fb-ig" id="igFloat" href="https://instagram.com/hassanyousseff.1" target="_blank" rel="noopener" aria-label="Follow on Instagram">
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-    <span class="fb-label">Follow on Instagram</span>
-  </a>
-  <a class="float-btn fb-wa" id="waFloat" href="https://wa.me/201026745745?text=Hey%20Yassin,%20I%20saw%20your%20website%20and%20want%20to%20grow%20my%20brand." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    <span class="fb-label">Chat on WhatsApp</span>
-  </a>
-</div>
+    <!-- Section 7: Detailed FAQ -->
+    <section id="faq" class="max-w-4xl mx-auto px-6 py-28 border-b border-gray-900">
+        <div class="text-center mb-16">
+            <div class="text-xs uppercase tracking-widest text-indigo-400 mono mb-3">06 — Answers & Insights</div>
+            <h2 class="text-3xl font-bold text-white tracking-tight">Frequently asked.</h2>
+        </div>
+        
+        <div class="space-y-6">
+            <div class="bg-[#0E121A] border border-gray-900 rounded-xl p-6">
+                <h3 class="text-sm font-bold text-white mb-2">Why focus solely on clothing and apparel stores?</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">Clothing brands live or die by consumer hooks, visual presentation, and rapid trend cycles. By dedicating our focus entirely to this industry, we know exactly what copy patterns, hook styles, and tracking structures win purchases right now.</p>
+            </div>
+            <div class="bg-[#0E121A] border border-gray-900 rounded-xl p-6">
+                <h3 class="text-sm font-bold text-white mb-2">How does your bilingual capability affect my returns?</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">If you sell products internationally or target regions across North America and Europe, generic translations fall completely flat. We design native, natural ad positioning directly in both English and French to make sure your audience builds immediate trust with your store.</p>
+            </div>
+            <div class="bg-[#0E121A] border border-gray-900 rounded-xl p-6">
+                <h3 class="text-sm font-bold text-white mb-2">Why don't you share live dashboard access?</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">We protect our clients' data and competitive advantages fiercely. Publicly publishing actual product insights opens the door for competitors to copy winning assets. We keep operations clean and confidential, walk you through strategies on live screen-shares, and send plain-English summaries directly to you.</p>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Section 8: Contact Footer -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-24 text-center md:text-left">
+        <h2 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-16">Let's make your <br>ad accounts <span class="italic text-indigo-400 font-normal">print.</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 mb-16 border-b border-gray-900 pb-16">
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mono mb-3">Email Address</h4>
+                <div class="text-xl font-semibold"><a href="mailto:yassinahmedll@icloud.com" class="text-white hover:text-indigo-400 transition">yassinahmedll@icloud.com</a></div>
+                <p class="text-xs text-gray-500 mt-2">Direct channel response within 24 hours.</p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mono mb-3">Direct Channel</h4>
+                <div class="text-xl font-semibold"><a href="https://wa.me/201026745745?text=Hey%20Yassin,%20I%20saw%20your%20website%20and%20want%20to%20grow%20my%20brand." target="_blank" class="text-indigo-400 hover:text-indigo-300 transition">WhatsApp →</a></div>
+                <p class="text-xs text-gray-500 mt-2">+20 102 674 5745 · Egypt</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-600 mono">
+            <div class="text-center md:text-left">
+                <div>© YA Media 2026</div>
+                <div class="opacity-60 mt-1">Independent Scaling Operation. Zero Bureaucracy.</div>
+            </div>
+            <div class="text-2xl font-bold tracking-tighter text-gray-800 italic select-none">ya.</div>
+            <div class="flex space-x-6">
+                <a href="https://instagram.com/hassanyousseff.1" target="_blank" class="hover:text-white transition">Instagram</a>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+                <a href="#" class="hover:text-white transition">X</a>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
